@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.pactera.jeesite</groupId>
+		<artifactId>aggregator</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../aggregator</relativePath>
+	</parent>
+
+	<groupId>com.pactera.jeesite</groupId>
+	<artifactId>jeesite-web</artifactId>
+	<version>1.2.10</version>
+	<packaging>war</packaging>
+
+	<name>jeesite-web</name>
+	<url>http://maven.apache.org</url>
+	<description>web是平台基础页面，里面是jeesite的页面代码</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<argLine>-Dfile.encoding=UTF-8</argLine>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+                    <forkMode>once</forkMode>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+			
+			<!-- war 打包插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<packagingExcludes>
+						<!-- WEB-INF/classes/com/thinkgem/jeesite/** -->
+						WEB-INF/classes/org/apache/ibatis/**,
+						WEB-INF/classes/org/mybatis/spring/**,
+						WEB-INF/web.xml
+					</packagingExcludes>
+					<warSourceExcludes>
+						static/bootstrap/2.3.1/docs/**,
+						static/ckeditor/_samples/**,
+						static/ckeditor/_source/**,
+						static/ckfinder/_samples/**,
+						static/ckfinder/help/**,
+						static/compressor*/**,
+						static/jquery-jbox/2.3/docs/**,
+						static/jquery-jbox/2.3/Skins2/**,
+						static/jquery-validation/1.11.0/demo/**,
+						static/jquery-validation/1.11.0/lib/**,
+						static/jquery-validation/1.11.1/test/**,
+						static/jquery-validation/1.11.1/lib/**,
+						static/jquery-validation/1.14.0/demo/**,
+						static/jquery-validation/1.14.0/test/**,
+						static/jquery-validation/1.14.0/lib/**,
+						static/jquery-validation/1.14.0/src/**,
+						static/jquery-ztree/3.5.12/**,
+						static/jquery-ztree/3.5.19/demo/**,
+						static/My97DatePicker/docs/**,
+						static/supcan/doc/**,
+						static/SuperSlide/demo/**,
+						static/treeTable/demo/**<!-- , -->
+						<!-- userfiles/** --><!-- ,/**/*.jsp -->
+						,
+						test/**
+					</warSourceExcludes>
+					<webappDirectory>${project.build.directory}/${project.artifactId}-${project.version}</webappDirectory><!-- 
+						<webXml>${project.basedir}/target/jspweb.xml</webXml> -->
+					<warName>${project.artifactId}-${project.version}</warName>
+				</configuration>
+			</plugin>
+			
+			<!-- source插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!--继承父模块的jar包
+			主要目的是本war包打包所有jeesite-common的lib，
+			减少各modules不必要的重复overlay common的lib的时间。 -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jeesite-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+
+	<!-- 开发者信息 -->
+	<developers>
+		<developer>
+			<id>jeffen</id>
+			<name>Jeffen Cheung</name>
+			<email>jeffencheung@gmail.com</email>
+			<roles>
+				<role>Lead Developer</role>
+			</roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>pactera</name>
+		<url>http://pactera.com</url>
+	</organization>
+	
+	<!-- 配置部署的企业仓库
+		[out of office]219.143.215.116:8083
+		[in-house]192.168.5.5:8083
+	 -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Nexus Rlease Repository</name>
+			<url>http://192.168.5.5:8083/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://192.168.5.5:8083/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
