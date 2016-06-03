@@ -1,0 +1,307 @@
+.sy_bgImg {
+	position: relative;
+	background: url(login_bg.jpg) no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 667px;
+	-ms-behavior: url(../static/backgroundsize.min.htc);
+	behavior: url(../static/backgroundsize.min.htc);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='../static/images/login_bg.jpg', sizingMethod='scale');
+}
+.header{
+	width: 100%;
+	position:absolute;
+	top: 56px;
+}
+.logo{
+	width: 320px;
+	height: 82px;
+	float: left;
+	margin-left: 66px;
+	background: url(logo.png) no-repeat;
+	background-size: cover;
+	-ms-behavior: url(../static/backgroundsize.min.htc);
+	behavior: url(../static/backgroundsize.min.htc);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='../static/images/logo.png', sizingMethod='scale');
+}
+.sysname{
+	width: 410px;
+	height: 64px;
+	float: right;
+	margin-right: 170px;
+	background: url(sysname.png) no-repeat;
+	background-size: cover;
+	-ms-behavior: url(../static/backgroundsize.min.htc);
+	behavior: url(../static/backgroundsize.min.htc);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='../static/images/sysname.png', sizingMethod='scale');
+}
+.cover-page-wrap{
+	position: absolute;
+	left:54%;
+	top:22%;
+	width: 450px;
+	height:auto;
+	padding: 20px 0;
+	
+}
+.cover-page {
+	width: 27em;
+	/*background: #00135d;*/	
+	padding: 0 74px 20px;
+	padding-bottom: 1%;
+}
+
+.cover-bg {
+	position: absolute;
+	left:54%;
+	top:22%;
+	width: 450px;
+	background: #00135d;
+	height: 440px;
+	opacity: .4;
+	filter: alpha(opacity = 40); /* IE */
+	-moz-opacity: 0.4; /* 老版Mozilla */
+	-khtml-opacity: 0.4; /* 老版Safari */
+	padding-bottom: 0.5%;
+}
+
+#subBtn{
+	margin-right: 50px;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	left:40%;
+	height: 80px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	line-height: 95px;
+}
+
+.c_eb1313 {
+	color: #eb1313;
+}
+
+.bg_0858c7 {
+	background: #0858c7
+}
+
+.c_6f {
+	color: #ffffff;
+}
+
+.c_eb4f17 {
+	color: #eb4f17
+}
+
+.cover-head {
+	padding: 0 30px;
+	height: 40px;
+	line-height: 40px;
+	background: #000a64;
+	color: #fff;
+	font-size: 18px
+}
+
+.cover-text {
+	color: #fff;
+	font-size: 16px;
+	width:100%;
+	/*padding-left: 27%;*/
+}
+
+.cover-text label {
+	display: block;
+	margin-top: 2.5em;
+	position: relative;
+}
+.cover-text .input-label{
+	margin-top: 0;
+}
+.display_ib {
+	display: inline-block
+}
+
+.username p {
+	margin-bottom: 5px
+}
+
+.username span,.password span {
+	width: 42px;
+	height: 3em;
+	background: url(icon-user.png) center center no-repeat;
+	display: inline-block;
+	position: absolute;
+	padding: 0em 1em 1em 1em; 
+	border-right: 1px solid #4ea0bb;
+}
+.cover-text .password{
+	margin-top: 1em;
+}
+.username>div {
+	position: absolute;
+	background: #000000;
+	opacity: .21;
+	filter: alpha(opacity = 21); /* IE */
+	-moz-opacity: 0.21; /* 老版Mozilla */
+	-khtml-opacity: 0.21; /* 老版Safari */
+	width: 100%;
+	height: 50px
+}
+
+.password>div {
+	position: absolute;
+	background: #000000;
+	opacity: .21;
+	filter: alpha(opacity = 21); /* IE */
+	-moz-opacity: 0.21; /* 老版Mozilla */
+	-khtml-opacity: 0.21; /* 老版Safari */
+	width: 100%;
+	height: 50px
+}
+
+ .password span{
+	background: url(icon-psd.png) center center no-repeat;
+}
+
+.check>p {
+	display: inline-block;
+	width: 60px;
+}
+
+.check #check {
+	width: 155px
+}
+
+.check>img {
+	float: right;
+}
+
+.cover-text label input {
+	width: 280px;
+	height: 4em;
+	line-height: 3em;
+	vertical-align: middle;
+	border: 0;
+	padding-left: 90px;
+	color: #000;
+}
+
+#messageBox{
+	width:265px;/*
+	margin-left:20%;*/
+}
+.cover-text em {
+	position: absolute;
+	left: 90;
+	top: 17px
+}
+
+.cover-dl {
+	margin: 0 auto;
+    padding: 1em 2.5em;
+    text-align: center;
+    display: inline-block;
+    margin-top: .3em;
+    position: relative;
+    background: #3a83d8;
+    color: #fff;
+    border: 0;
+    overflow: visible;
+    *width: 1;    
+}
+.rememberInput input{
+padding:0;
+margin:0;
+overflow:visible;
+width:auto;
+*width:13px;
+}
+.pasdw{
+	display: inline-block;
+	font-size: 14px;
+	color: #cbdef8;
+	padding-right: 10px;
+}
+.cover-cz {
+	margin: 0 auto;
+	padding: 1em 2.5em;
+	text-align: center;
+	display: inline-block;
+	margin-top: .3em;
+	position: relative;
+	background: #3a83d8;
+	color: #fff;
+	border:0;
+	overflow: visible;
+    *width: 1;
+}
+
+.cover-dl:hover,.cover-cz:hover {
+	background: #91c3e7;
+}
+.form-signin{width:27em}
+.cover-dl img {
+	position: absolute;
+	right: 20px
+}
+
+.forget {
+	margin-top: 10px
+}
+
+.clearfix:before, .clearfix:after {
+	display: table;
+	content: " "
+}
+
+.mt_10 {
+	margin-top: 15px;
+}
+
+.mt_20 {
+	margin-top: 15px
+}
+
+.w_p730 {
+	width: 730px
+}
+
+.ta_right {
+	text-align: right;
+}
+
+.sorryServer {
+	background: #000
+}
+
+.sorry {
+	margin: 0 auto;
+	margin-top: 20px;
+	border: 1px solid #e00070;
+	padding: 5px;
+	background: #ffe5f2;
+	width: 307px;
+	margin-right: 0;
+	text-align: left;
+}
+
+input::-webkit-input-placeholder {
+	　　color: #fff !important;
+}
+
+.rememberInput .input {
+	display: inline-block;
+}
+
+.clearlabel {
+	display: inline;
+}
+#validateCode{
+	display: inline-block;
+	width: 75px!important;
+}

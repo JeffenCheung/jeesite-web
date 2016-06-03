@@ -112,6 +112,14 @@ function loading(mess){
 	top.$.jBox.tip(mess,'loading',{opacity:0});
 }
 
+//关闭提示框
+function closeLoading(){
+	// 恢复提示框显示
+	resetTip();
+	// 关闭提示框
+	closeTip();
+}
+
 // 警告对话框
 function alertx(mess, closed){
 	top.$.jBox.info(mess, '提示', {closed:function(){
@@ -289,4 +297,14 @@ function abbr(name, maxLength){
      return name;  
  }  
  return nameSub;  
+}
+
+// reset defaults options for colResizable
+function reDefColResizable() {
+	return {
+				resizeMode: 'flex',
+				fixed: false,
+				liveDrag: true, 
+				postbackSafe: false
+			};
 }

@@ -8,6 +8,7 @@
 	 <!-- CSS and JS for table fixed header -->
 	<link rel="stylesheet" href="${ctxStatic}/bootstrap/table-fixed-header-master/table-fixed-header.min.css">
 	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/table-fixed-header.min.js"></script>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	
 	<%@include file="/WEB-INF/views/include/treetable.jsp" %>
 	<script type="text/javascript">
@@ -20,10 +21,16 @@
 			$("#treeTable tbody tr").on("dblclick", function() {
 			    location.href="${ctx}/sys/menu/form?id="+this.id;
 			});
+			$("#bottom-sticker").bottomSticker({bottom: '-15px'});
 		});
     	function updateSort() {
 			loading('正在提交，请稍等...');
 	    	$("#listForm").attr("action", "${ctx}/sys/menu/updateSort");
+	    	$("#listForm").submit();
+    	}
+    	function updateSitemap() {
+			loading('正在更新，请稍等...');
+	    	$("#listForm").attr("action", "${ctx}/seo/sitemap");
 	    	$("#listForm").submit();
     	}
 	</script>
@@ -34,7 +41,7 @@
 		<shiro:hasPermission name="sys:menu:edit"><li><a href="${ctx}/sys/menu/form">菜单添加</a></li></shiro:hasPermission>
 	</ul>
 	<sys:message content="${message}"/>
-	<form id="listForm" method="post">
+	<form id="listForm" method="post" class="form-horizontal">
 		<table id="treeTable" class="table table-striped table-bordered table-condensed  table-hover hide table-fixed-header">
 			<thead class="header"><tr><th>名称</th><th>链接</th><th style="text-align:center;">排序</th><th>可见</th><th>权限标识</th><shiro:hasPermission name="sys:menu:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 			<tbody><c:forEach items="${list}" var="menu">
@@ -59,8 +66,9 @@
 				</tr>
 			</c:forEach></tbody>
 		</table>
-		<shiro:hasPermission name="sys:menu:edit"><div class="form-actions pagination-left">
+		<shiro:hasPermission name="sys:menu:edit"><div class="form-actions pagination-left" id="bottom-sticker">
 			<input id="btnSubmit" class="btn btn-primary" type="button" value="保存排序" onclick="updateSort();"/>
+			<input id="btnSitemap" class="btn btn-primary" type="button" value="更新网站地图" onclick="updateSitemap();"/>
 		</div></shiro:hasPermission>
 	 </form>
 </body>

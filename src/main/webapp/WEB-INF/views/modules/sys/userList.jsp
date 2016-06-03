@@ -8,6 +8,7 @@
 	 <!-- CSS and JS for table fixed header -->
 	<link rel="stylesheet" href="${ctxStatic}/bootstrap/table-fixed-header-master/table-fixed-header.min.css">
 	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/table-fixed-header.min.js"></script>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	
 	<script type="text/javascript">
 		var TITLE_AUTOCOMPLETE_URL = "${ctx}/sys/user/getTitleList";
@@ -100,6 +101,7 @@
 			
 			// make the header fixed on scroll
 			$(".table-fixed-header").fixedHeader();
+			$("#bottom-sticker").bottomSticker();
 		});
 		function page(n,s){
 			if(n) $("#pageNo").val(n);
@@ -137,6 +139,7 @@
 	</div>
 	<ul id="mynav" class="nav nav-tabs">
 		<li class="active"><a href="${ctx}/sys/user/list">用户列表</a></li>
+		<li><a href="${ctx}/sys/user/listJq">用户列表(JqGrid)</a></li>
 		<shiro:hasPermission name="sys:user:edit"><li><a href="${ctx}/sys/user/form">用户添加</a></li></shiro:hasPermission>
 	</ul>
 	<form:form id="searchForm" modelAttribute="user" action="${ctx}/sys/user/list" method="post" class="breadcrumb form-search ">
@@ -203,6 +206,6 @@
 		</c:forEach>
 		</tbody>
 	</table>
-	<div class="pagination">${page}</div>
+	<div class="pagination" id="bottom-sticker">${page}</div>
 </body>
 </html>

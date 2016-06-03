@@ -4,6 +4,7 @@
 <head>
 	<title>菜单管理</title>
 	<meta name="decorator" content="default"/>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#name").focus();
@@ -22,6 +23,7 @@
 					}
 				}
 			});
+			$("#bottom-sticker").bottomSticker();
 		});
 	</script>
 </head>
@@ -101,7 +103,7 @@
 				<span class="help-inline">(查看：view；编辑：edit；IO：io；DBA：dba)</span>
 			</div>
 		</div>
-		<div class="form-actions">
+		<div class="form-actions" id="bottom-sticker">
 			<shiro:hasPermission name="sys:menu:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>
 		</div>

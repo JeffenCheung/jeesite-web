@@ -10,9 +10,9 @@
 <%@ taglib prefix="cms" tagdir="/WEB-INF/tags/cms" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}${fns:getAdminPath()}"/>
 <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>
-
-	<!-- 地址栏图标 -->
-	<link rel="icon" href="favicon.ico"  mce_href="favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="favicon.ico"  mce_href="favicon.ico" type="image/x-icon">
-	<!-- 收藏夹图标 -->
-	<link rel="Bookmark" href="favicon.ico">
+	
+<!-- 地址栏图标 -->
+<link rel="icon" href="${pageContext.request.contextPath}/favicon.ico"  mce_href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico"  mce_href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon">
+<!-- 收藏夹图标 -->
+<link rel="Bookmark" href="${pageContext.request.contextPath}/favicon.ico">

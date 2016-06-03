@@ -10,8 +10,9 @@
 	<c:set var="tabmode" value="${empty cookie.tabmode.value ? '1' : cookie.tabmode.value}"/>
 	<c:set var="breadcrumbmode" value="${empty cookie.breadcrumbmode.value ? '0' : cookie.breadcrumbmode.value}"/>
     	<c:if test="${tabmode eq '1'}">
-	<link rel="Stylesheet" href="${ctxStatic}/jerichotab/css/jquery.jerichotab.css" />
-	<script type="text/javascript" src="${ctxStatic}/jerichotab/js/jquery.jerichotab.js"></script>
+    <c:set var="oaNotifyRemindInterval" value="${fns:getConfig('oa.notify.remind.interval')}"/>
+	<link rel="Stylesheet" href="${ctxStatic}/jerichotab/css/jquery.jerichotab.min.css" />
+	<script type="text/javascript" src="${ctxStatic}/jerichotab/js/jquery.jerichotab.min.js"></script>
     	</c:if>
     	
     	<c:if test="${demoMode}">
@@ -158,8 +159,9 @@
 			});
 				</c:if>
 					
-			//<c:set var="oaNotifyRemindInterval" value="${fns:getConfig('oa.notify.remind.interval')}"/>
-			getNotifyNum(); //<c:if test="${oaNotifyRemindInterval ne '' && oaNotifyRemindInterval ne '0'}">
+			// 通知角标
+			//<c:if test="${oaNotifyRemindInterval ne '' && oaNotifyRemindInterval ne '0'}">
+			getNotifyNum(); 
 			setInterval(getNotifyNum, ${oaNotifyRemindInterval}); //</c:if>
 			
 			// <c:if test="${tabmode eq '1'}"> add by jeffen@pactera 2016/1/20 
@@ -186,11 +188,20 @@
 						<!--[if lte IE 6]><script type="text/javascript">$('#themeSwitch').hide();</script><![endif]-->
 					</li>
 					<li id="userInfo" class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="个人信息">您好, ${fns:getUser().name}&nbsp;<span id="notifyNum" class="label label-info hide"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="个人信息">您好, ${fns:getUser().name}
+							<c:if test="${oaNotifyRemindInterval ne '' && oaNotifyRemindInterval ne '0'}">
+						&nbsp;<span id="notifyNum" class="label label-info hide"></span>
+							</c:if>
+						</a>
 						<ul class="dropdown-menu">
+							<c:set var="userinfo_profile_img" value="${ctxStatic}${'/images/profile.png'}" ></c:set>
+							<li><img src="${fns:getUser().photo eq null or fns:getUser().photo eq '' ? userinfo_profile_img : fns:getUser().photo}" /></li>
 							<li><a href="${ctx}/sys/user/info" target="mainFrame"><i class="icon-user"></i>&nbsp; 个人信息</a></li>
 							<li><a href="${ctx}/sys/user/modifyPwd" target="mainFrame"><i class="icon-lock"></i>&nbsp;  修改密码</a></li>
+							<li class="divider"></li>
+								<c:if test="${oaNotifyRemindInterval ne '' && oaNotifyRemindInterval ne '0'}">
 							<li><a href="${ctx}/oa/oaNotify/self" target="mainFrame"><i class="icon-bell"></i>&nbsp;  我的通知 <span id="notifyNum2" class="label label-info hide"></span></a></li>
+								</c:if>
 						</ul>
 					</li>
 					<li><a href="${ctx}/logout" title="${fns:getLang('common.exit.confirm', null)}"><sys:mutiLang langKey="common.exit"/></a></li>
@@ -255,7 +266,10 @@
 				</div>
 			</div>
 		    <div id="footer" class="row-fluid">
-	            Copyright &copy; ${fns:getConfig('copyrightYearSince')}-${fns:getConfig('copyrightYear')} <a href="${fns:getConfig('orgPortal')}" target="_blank">${fns:getConfig('organization')}</a> - Powered By <a href="${fns:getConfig('poweredByPortal')}" target="_blank">${fns:getConfig('poweredBy')} </a> ${fns:getConfig('version')}
+	            Copyright &copy; ${fns:getConfig('copyrightYearSince')}-${fns:getConfig('copyrightYear')}
+	            &nbsp;<a href="${fns:getConfig('orgPortal')}" target="_blank">${fns:getConfig('organization')}</a>
+	            &nbsp;-&nbsp;Powered By <a href="${fns:getConfig('poweredByPortal')}" target="_blank">${fns:getConfig('poweredBy')} </a> ${fns:getConfig('version')}
+	            &nbsp;-&nbsp;Build By <a href="http://jeffencheung.github.com/aggregator" target="_blank">PacteraJeesite</a>&nbsp;${fns:getConfig('frameworkBuildVersion')}
 			</div>
 		</div>
 	</div>

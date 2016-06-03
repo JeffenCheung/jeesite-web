@@ -1,0 +1,98 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, ul, ol, li, dl, dt, dd, table, td,
+	th, caption, form, button, input, select, textarea, fieldset, legend,
+	blockquote, iframe, address {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+html {
+	_background: url(about:blank);
+}
+
+html {
+	height: 100%
+}
+
+body {
+	font-size: 12px;
+	font-family: "微软雅黑";
+	/*min-width: 320px;*/
+	margin: 0 auto;
+	position: relative;
+	min-width: 1100px;
+	height: 100%
+}
+
+img, fieldset {
+	border: 0;
+}
+
+iframe {
+	display: block;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+em, i, dfn, cite, address {
+	font-style: normal;
+}
+
+hr {
+	height: 0;
+	overflow: hidden;
+	border: 0;
+}
+
+h1, h2, h3, h4, h5, h6, font {
+	font-size: 100%;
+}
+
+q:after, q:before {
+	content: '';
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input[type=radio], input[type=checkbox] {
+	vertical-align: middle;
+}
+
+select {
+	height: 23px;
+	line-height: 23px;
+	padding: 3px;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+}
+
+a, button {
+	cursor: pointer;
+}
+
+input, button, textarea, select {
+	font-family: inherit;
+	font-size: 100%;
+}
+
+textarea {
+	resize: none;
+}
+
+legend {
+	*margin: 0 -7px;
+}
+.fs_12{
+	font-size: 12px;
+}
+.fs_26 {
+	font-size: 26px;
+}

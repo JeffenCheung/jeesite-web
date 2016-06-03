@@ -3,6 +3,7 @@
  * jerichotab
  * version: release-2.0.1 (05/13/2009) 
  * version: release-2.0.2 (01/17/2016) by jeffen@pactera
+ * version: release-2.0.3 (06/02/2016) by jeffen@pactera
  * @ jQuery v1.3.*
  *
  * Licensed under the GPL:
@@ -37,6 +38,8 @@
 				*fn_beforeAddTab(function): call the event before addTab
 				*fn_afterTabMouseup(function): call the event after tab mouseup
 				*fn_afterTabLoad(function): call the event after tab load data
+				*openWithNewWidowAfterDblClick(Boolean): open a new window after tab double click tab
+				*fn_tabDblClick(function): call the event after tab double click
 				
 		#$.fn.jerichoTab.addTab(Function):
 				*tabId(String); the unique tab Id(Unused, private)
@@ -123,7 +126,10 @@ $.extend($.fn, {
             //set afterTabMouseup function
         	fn_afterTabMouseup: null,
             //set afterTabLoad function
-        	fn_afterTabLoad: null
+        	fn_afterTabLoad: null,
+            //set tabDblClick function
+            openWithNewWidowAfterDblClick: true,
+        	fn_tabDblClick: null
         }, setting);
         //initialize the jerichotab
         function createJerichoTab() {
@@ -167,6 +173,8 @@ $.extend($.fn, {
                 fn_beforeAddTab: opts.fn_beforeAddTab,
                 fn_afterTabMouseup: opts.fn_afterTabMouseup,
                 fn_afterTabLoad: opts.fn_afterTabLoad,
+                openWithNewWidowAfterDblClick: opts.openWithNewWidowAfterDblClick,
+                fn_tabDblClick: opts.fn_tabDblClick,
                 curDatalink: null,
                 
                 tabpage: $('.tab_pages>.tabs>ul', jerichotab),
@@ -708,6 +716,14 @@ $.extend($.fn, {
 			    	window.console && window.console.debug('[jqeuery.jerichotab.js]cookieTabLast='
 			    		, cookie($.fn.jerichoTab.cookieTabLast));
             	}
+            }).dblclick(function() {
+            	// add by jeffen@pactera 2016/6/2
+            	if($.fn.jerichoTab.fn_tabDblClick){
+            		$.fn.jerichoTab.fn_tabDblClick.call();
+            	}
+            	if($.fn.jerichoTab.openWithNewWidowAfterDblClick){
+	            	window.open($(this).attr('datalink'), '_blank');
+	            }
             });
         });
     },

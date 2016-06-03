@@ -4,6 +4,7 @@
 <head>
 	<title>修改密码</title>
 	<meta name="decorator" content="default"/>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#oldPassword").focus();
@@ -27,6 +28,7 @@
 					}
 				}
 			});
+			$("#bottom-sticker").bottomSticker();
 		});
 	</script>
 </head>
@@ -59,7 +61,7 @@
 				<span class="help-inline"><font color="red">*</font> </span>
 			</div>
 		</div>
-		<div class="form-actions">
+		<div class="form-actions" id="bottom-sticker">
 			<input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>
 		</div>
 	</form:form>

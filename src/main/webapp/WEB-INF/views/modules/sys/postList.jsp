@@ -8,6 +8,7 @@
 	 <!-- CSS and JS for table fixed header -->
 	<link rel="stylesheet" href="${ctxStatic}/bootstrap/table-fixed-header-master/table-fixed-header.min.css">
 	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/table-fixed-header.min.js"></script>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	<script src="${ctxStatic}/common/gridify.min.js"></script>
 	
 	<script type="text/javascript">
@@ -43,6 +44,7 @@
 			
 			// make the header fixed on scroll
 			$(".table-fixed-header").fixedHeader();
+			$("#bottom-sticker").bottomSticker();
 		});
 		function page(n,s){
 			$("#pageNo").val(n);
@@ -141,7 +143,7 @@
 				<tr id="${post.id}">
 					<td class="row-checkbox"><input type="checkbox" name="cbRowData" id="cb_${post.id}" class="checkbox" /><label for="cb_${post.id}"><span></span></label></td></td>
 					<td class="row-number">
-						${vs.index + 1}
+						${vs.index + 1 + (page.pageNo-1)*page.pageSize}
 					</td>
 					<td class="row-id" style="display:none;">${post.id}</td>
 					<td><a href="${ctx}/sys/post/form?id=${post.id}">
@@ -162,7 +164,7 @@
 			</c:forEach>
 			</tbody>
 		</table>
+		<div class="pagination" id="bottom-sticker">${page}</div>
 	</form:form>
-	<div class="pagination">${page}</div>
 </body>
 </html>

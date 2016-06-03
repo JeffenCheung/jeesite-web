@@ -8,6 +8,7 @@
 	<!-- CSS and JS for bootstrap-tagsinput -->
 	<link rel="stylesheet" href="${ctxStatic}/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.css">
 	<script src="${ctxStatic}/bootstrap/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -26,6 +27,7 @@
 					}
 				}
 			});
+			$("#bottom-sticker").bottomSticker();
 		});
 	</script>
 </head>
@@ -111,7 +113,7 @@
 				<label class="lbl">IP: ${user.oldLoginIp}&nbsp;&nbsp;&nbsp;&nbsp;时间：<fmt:formatDate value="${user.oldLoginDate}" type="both" dateStyle="full"/></label>
 			</div>
 		</div>
-		<div class="form-actions">
+		<div class="form-actions" id="bottom-sticker">
 			<input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>
 		</div>
 	</form:form>

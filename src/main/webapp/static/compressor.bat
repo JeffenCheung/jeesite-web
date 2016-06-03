@@ -30,20 +30,21 @@ rem call compressor\compressor.bat common\jeesite.css
 rem call compressor\compressor.bat bootstrap\table-fixed-header-master\table-fixed-header.css
 rem call compressor\compressor.bat bootstrap\table-fixed-header-master\table-fixed-header.js
 rem call compressor\compressor.bat bootstrap\table-fixed-header-master\duplicate_rows.js
+rem call compressor\compressor.bat bootstrap\table-fixed-header-master\bottom-sticker.js
 
-call compressor\compressor.bat bootstrap\2.3.1\css_sdbi\bootstrap.css
-call compressor\compressor.bat bootstrap\2.3.1\css_default\bootstrap.css
-call compressor\compressor.bat bootstrap\2.3.1\css_united\bootstrap.css
-call compressor\compressor.bat bootstrap\2.3.1\css_orange\bootstrap.css
-call compressor\compressor.bat bootstrap\2.3.1\css_cerulean\bootstrap.css
-call compressor\compressor.bat bootstrap\2.3.1\css_readable\bootstrap.css
-call compressor\compressor.bat bootstrap\2.3.1\css_flat\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_sdbi\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_default\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_united\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_orange\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_cerulean\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_readable\bootstrap.css
+rem call compressor\compressor.bat bootstrap\2.3.1\css_flat\bootstrap.css
 
 rem add by jeffen@pactera 2016/1/24
 rem call compressor\compressor.bat DataTables\1.10.10\js\fnReloadAjax.js
 rem call compressor\compressor.bat DataTables\1.10.10\js\jquery.dataTables.js
 
-rem call compressor\compressor.bat common\gridify.js
+call compressor\compressor.bat common\gridify.js
 
 echo.
 echo Compressor Success

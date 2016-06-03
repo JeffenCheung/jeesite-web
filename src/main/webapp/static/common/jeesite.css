@@ -4,7 +4,8 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * modify by jeffen@pactera 2015/6/9 V2.1
  * add row-number、row-checkbox by jeffen@pactera 2015/9/15 V2.2
- * move body css to bootstrap theme by jeffen@pactera 2011/1/15 V2.3
+ * move body css to bootstrap theme by jeffen@pactera 2016/1/15 V2.3
+ * modiby button's hover style via thoughtworks homepage by jeffen@pactera 2016/4/20 V2.4
  */
 html,body {scrollbar-face-color:#ffffff;scrollbar-highlight-color:#ffffff;scrollbar-darkshadow-color:#ffffff;padding:0;}
 img {max-width:auto;} h1 {font-size:30px;} h1, h2, h3, h4, h5, h6 {margin:0;} a {outline: none;} a:active {star:expression(this.onFocus=this.blur());}
@@ -29,6 +30,18 @@ button.btn{*padding:3px 10px 2px;*background-color:transparent;}
 input.btn {filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);*color:#555555}
 input.btn:hover {*color:#333333}
 */
+
+/* add by jeffen@pactera 2016/4/20 start*/
+.btn:hover, .tag:hover {
+    -webkit-transform: translate(0,-2px);
+    -moz-transform: translate(0,-2px);
+    -ms-transform: translate(0,-2px);
+    -o-transform: translate(0,-2px);
+    transform: translate(0,-2px);
+    opacity: .85;
+}
+/* add by jeffen@pactera 2016/4/20 end*/
+
 .nav, .breadcrumb {margin-bottom:8px;}
 .nav-list li a {margin-top:5px;margin-bottom:5px;_padding-top:6px;} .nav-list li a i{_margin-top:-1px;}
 
@@ -78,11 +91,20 @@ input.required-disabled{border-left: 4px solid #CCCCCC !important;z-index: 10000
 .form-horizontal .table-form{width:100%;border-color:#dddddd;}
 .form-horizontal .table-form, .form-horizontal .table-form td{border:1px solid #ddd;background-color:#fdfdfd;padding:4px;} 
 .form-horizontal .table-form td.tit{background:#fafafa;text-align:center;padding-right:8px;white-space:nowrap;}
-.form-horizontal .form-actions{margin-bottom:0;}
+
+/* modify by jeffen@pactera 2016/4/12 */
+.form-horizontal .form-actions{
+	margin-bottom:0;
+	/* make the box translucent (80% opaque) */
+	opacity: 0.9;	/* Firefox, Safari(WebKit), Opera */
+	filter: alpha(opacity=90);	/* IE 4-7 */
+	-ms-filter: "alpha(opacity=90)";	/* IE 8 */
+	zoom: 1;	/* set "zoom", "width" or "height" to trigger "hasLayout" in IE 7 and lower */
+}
 
 .form-horizontal fieldset .row-fluid {margin-bottom:10px;}
 
-.pagination {margin:8px 0;} .pagination .controls a{border:0;}
+.pagination {margin:-8px 0 0 0; padding:5px 0; background-color: white;} .pagination .controls a{border:0;}
 .pagination .controls input{border:0;color:#999;width:30px;padding:0;margin:-3px 0 0 0;text-align:center;}
 
 .modal-backdrop {background-color:#ffffff;}

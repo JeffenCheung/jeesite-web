@@ -5,6 +5,7 @@
 	<title>角色管理</title>
 	<meta name="decorator" content="default"/>
 	<%@include file="/WEB-INF/views/include/treeview.jsp" %>
+	<script src="${ctxStatic}/bootstrap/table-fixed-header-master/bottom-sticker.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#name").focus();
@@ -50,6 +51,7 @@
 					}
 				}
 			});
+			$("#bottom-sticker").bottomSticker();
 
 			var setting = {check:{enable:true,nocheckInherit:true},view:{selectedMulti:false},
 					data:{simpleData:{enable:true}},callback:{beforeClick:function(id, node){
@@ -252,7 +254,7 @@
 				<form:textarea path="remarks" htmlEscape="false" rows="3" maxlength="200" class="input-xlarge"/>
 			</div>
 		</div>
-		<div class="form-actions">
+		<div class="form-actions" id="bottom-sticker">
 			<c:if test="${(role.sysData eq fns:getDictValue('是', 'yes_no', '1') && fns:getUser().admin)||!(role.sysData eq fns:getDictValue('是', 'yes_no', '1'))}">
 				<shiro:hasPermission name="sys:role:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
 			</c:if>

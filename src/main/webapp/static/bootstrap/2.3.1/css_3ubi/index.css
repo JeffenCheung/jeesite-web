@@ -1,0 +1,156 @@
+body {
+	min-width: 1360px;
+	width: expression_r(document.body.clientWidth < 1360 ? "1360px": "auto");
+}
+
+#main {
+	padding: 0;
+	margin: 0;
+}
+
+#main .container-fluid {
+	padding: 0 4px 0 6px;
+}
+
+#header {
+	margin: 0 0 0px!important;
+	position: static;
+}
+
+#header li {
+	font-size: 14px;
+	_font-size: 12px;
+}
+
+#header .brand {
+	font-family: Helvetica, Georgia, Arial, sans-serif, 黑体;
+	font-size: 26px;
+	padding-left: 33px;
+}
+
+#footer {
+	margin: 0px 0 0 0!important;
+	padding: 3px 0 0 0;
+	font-size: 11px;
+	text-align: center;
+	border-top: 2px solid #0663A2;
+}
+
+#footer,
+#footer a {
+	color: #999;
+}
+
+#left {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#left .collapse {
+	position: static;
+}
+
+#userControl>li>a {
+	/*color:#fff;*/
+	text-shadow: none;
+}
+
+#userControl>li>a:hover,
+#user #userControl>li.open>a {
+	background: transparent;
+}
+
+.navbar-inner {
+	position: relative;
+	height: 67px;
+	background:url("index_bg.jpg") no-repeat;
+}
+
+
+/*index的logo*/
+
+#productName {
+	display: inline-block;
+	width: 319px;
+	height: 54px;
+	margin: 6px 12px 0px 0px;
+	background: url("index_logo&sysname.png") no-repeat;
+}
+
+#userControl li{
+	float: left;
+	margin-left: 15px;
+}
+.department{
+	min-width: 112px;
+	height: 32px;
+	color: #fff;
+	padding-left: 35px;
+	font-weight: bold;
+	line-height: 44px;
+	background: url("user.png") no-repeat;
+}
+.username{
+	min-width: 80px;
+	height: 32px;
+	line-height: 44px;
+	color: #fff;
+	font-weight: bold;
+}
+.loginOut{
+	min-width: 60px;
+	height: 32px;
+	line-height: 44px;
+	color: #fff;
+	font-weight: bold;
+}
+/*head的框架级菜单隐藏*/
+#menu{
+	display: none;
+}
+
+/*左侧菜单列表*/
+.accordion-heading{
+	background: #404490;
+	height: 26px;
+	border-bottom: 1px solid #555ab4;
+}
+
+.accordion-body{
+	background: #6c6faa;
+}
+.accordion .accordion-group a{
+	color: #fff;
+}
+/*左侧菜单icon*/
+[class^="icon-"],
+[class*=" icon-"] {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: 1px;
+	margin-left: 5px;
+	*margin-right: .3em;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-image: url("accordion-heading.png");
+	background-repeat: no-repeat
+}
+.icon-circle-arrow-right{
+	display: inline-block;
+	width: 14px;
+	height: 10px;
+	margin-top: 3px;
+	background-image: url("floding.jpg");
+}
+.accordion{
+	min-width:150px;
+	height: 559px;
+	background: #404490;
+}
+#main .container-fluid{
+	padding-left: 0px!important;
+}
+.accordion .accordion-group{
+	min-width:150px;
+}

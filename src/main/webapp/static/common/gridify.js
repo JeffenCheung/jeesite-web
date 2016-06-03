@@ -79,6 +79,9 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	// 快捷键
+	hotKeys();
 
 	/*
 	 * 处理当前行状态
@@ -174,6 +177,22 @@ function truncateTable(url){
 		}
 	},{buttonsFocus:1});
 	top.$('.jbox-body .jbox-icon').css('top','55px');
+}
+
+/*
+ * 键盘监控
+ */
+function hotKeys(){
+	$(document).keydown(function(e){
+		if(e.ctrlKey && e.which == 37) {
+			// Ctrl + Left
+			$("#prevPage").click();
+		}
+		if(e.ctrlKey && e.which == 39) {
+			// Ctrl + Right
+			$("#nextPage").click();
+		}
+	});
 }
 
 /*

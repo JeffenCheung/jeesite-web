@@ -216,7 +216,10 @@
 				</div>
 			</div>
 		    <div id="footer" class="row-fluid">
-	            Copyright &copy; ${fns:getConfig('copyrightYearSince')}-${fns:getConfig('copyrightYear')} <a href="${fns:getConfig('orgPortal')}" target="_blank">${fns:getConfig('organization')}</a> - Powered By <a href="${fns:getConfig('poweredByPortal')}" target="_blank">${fns:getConfig('poweredBy')} </a> ${fns:getConfig('version')}
+	            Copyright &copy; ${fns:getConfig('copyrightYearSince')}-${fns:getConfig('copyrightYear')}
+	            &nbsp;<a href="${fns:getConfig('orgPortal')}" target="_blank">${fns:getConfig('organization')}</a>
+	            &nbsp;-&nbsp;Powered By <a href="${fns:getConfig('poweredByPortal')}" target="_blank">${fns:getConfig('poweredBy')} </a> ${fns:getConfig('version')}
+	            &nbsp;-&nbsp;Build By <a href="http://jeffencheung.github.com/aggregator" target="_blank">PacteraJeesite</a>&nbsp;${fns:getConfig('frameworkBuildVersion')}
 			</div>
 		</div>
 	</div>
